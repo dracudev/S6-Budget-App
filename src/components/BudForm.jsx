@@ -1,7 +1,7 @@
 import "./BudForm.css";
 import Form from 'react-bootstrap/Form';
 
-export function BudForm() {
+export function BudForm({budget, setBudget, selection, setSelection}) {
   return (
     <Form className="form">
       <label className="label">
@@ -41,7 +41,7 @@ export function BudForm() {
       </label>
       <div className="ms-auto mt-4 d-flex">
             <h3 className="me-4">Budget: </h3>
-            <h2 className="fw-bold">0€</h2>
+            <h2 className="fw-bold">{budget}</h2>
         </div>
     </Form>
     
