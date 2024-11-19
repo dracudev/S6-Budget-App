@@ -1,21 +1,9 @@
 import { Form } from "react-bootstrap";
 import "./BudForm.css";
-import { useState } from "react";
+import { useBudgetForm } from "../hooks/useBudgetForm";
 
-export const BudForm = () => {
-  const [seoChecked, setSeoChecked] = useState(false);
-  const [adsChecked, setAdsChecked] = useState(false);
-  const [webChecked, setWebChecked] = useState(false);
-  const [budget, setBudget] = useState(0);
-
-  function handleCheckboxChange(event, price) {
-    const isChecked = event.target.checked;
-    if (isChecked) {
-      setBudget(budget + price);
-    } else {
-      setBudget(budget - price);
-    }
-  }
+export function BudForm() {
+const {checkedItems, budget, handleChecked} = useBudgetForm();
 
   return (
     <Form className="form">
@@ -28,11 +16,8 @@ export const BudForm = () => {
         <div className="d-flex">
           <Form.Check
             type="checkbox"
-            checked={seoChecked}
-            onChange={(e) => {
-              setSeoChecked(e.target.checked);
-              handleCheckboxChange(e, 300);
-            }}
+            checked={checkedItems.seo}
+            onChange={(e) => handleChecked(e, 'seo', 300)}
           />
           <p className="ms-3">Add</p>
         </div>
@@ -47,11 +32,8 @@ export const BudForm = () => {
         <div className="d-flex">
           <Form.Check
             type="checkbox"
-            checked={adsChecked}
-            onChange={(e) => {
-              setAdsChecked(e.target.checked);
-              handleCheckboxChange(e, 400);
-            }}
+            checked={checkedItems.ads}
+            onChange={(e) => handleChecked(e, 'ads', 400)}
           />
           <p className="ms-3">Add</p>
         </div>
@@ -66,11 +48,8 @@ export const BudForm = () => {
         <div className="d-flex">
           <Form.Check
             type="checkbox"
-            checked={webChecked}
-            onChange={(e) => {
-              setWebChecked(e.target.checked);
-              handleCheckboxChange(e, 500);
-            }}
+            checked={checkedItems.web}
+            onChange={(e) => handleChecked(e, 'web', 500)}
           />
           <p className="ms-3">Add</p>
         </div>
