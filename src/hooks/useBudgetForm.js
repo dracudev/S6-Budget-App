@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useBudgetForm () {
+export function useBudgetForm() {
   const [checkedItems, setCheckedItems] = useState({
     seo: false,
     ads: false,
@@ -26,4 +26,4 @@ export function useBudgetForm () {
     budget,
     handleChecked,
   };
-};
+}
