@@ -6,7 +6,7 @@ export function BudNav() {
       <Navbar className="bg-body-primary d-flex me-auto container">
         <Container>
           <Navbar.Brand href="#home">
-            ⚡Frontender.itacademy
+            ⚡ Frontender.itacademy
           </Navbar.Brand>
         </Container>
       </Navbar>
