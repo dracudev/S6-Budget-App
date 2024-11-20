@@ -1,9 +1,17 @@
-import "./BudForm.css";
+import "./BudgetForm.css";
 import { useBudgetForm } from "../hooks/useBudgetForm";
-import { BudPages } from "./BudPages";
+import { WebElements } from "./WebElements";
 
-export function BudForm() {
-  const { checkedItems, budget, handleChecked } = useBudgetForm();
+export function BudgetForm() {
+  const {
+    checkedItems,
+    budget,
+    handleChecked,
+    elements,
+    setElements,
+    handleClickAdd,
+    handleClickRest,
+  } = useBudgetForm();
 
   return (
     <div className="card-container">
@@ -18,7 +26,7 @@ export function BudForm() {
             <input
               type="checkbox"
               checked={checkedItems.seo}
-              onChange={(e) => handleChecked(e, "seo", 300)}
+              onChange={(e) => handleChecked(e, "seo")}
             />
             <label className="ms-3">Add</label>
           </div>
@@ -36,7 +44,7 @@ export function BudForm() {
             <input
               type="checkbox"
               checked={checkedItems.ads}
-              onChange={(e) => handleChecked(e, "ads", 400)}
+              onChange={(e) => handleChecked(e, "ads")}
             />
             <label className="ms-3">Add</label>
           </div>
@@ -54,13 +62,20 @@ export function BudForm() {
             <input
               type="checkbox"
               checked={checkedItems.web}
-              onChange={(e) => handleChecked(e, "web", 500)}
+              onChange={(e) => handleChecked(e, "web")}
             />
             <label className="ms-3">Add</label>
           </div>
         </div>
 
-        {checkedItems.web && <BudPages />}
+        {checkedItems.web && (
+          <WebElements
+            elements={elements}
+            setElements={setElements}
+            handleClickAdd={handleClickAdd}
+            handleClickRest={handleClickRest}
+          />
+        )}
       </div>
 
       <div className="ms-auto mt-4 d-flex">

@@ -1,8 +1,7 @@
-import { useWebElements } from "../hooks/useWebElements";
-import "./BudPages.css";
+import "./WebElements.css";
 
-export function BudPages() {
-const {elements, setElements, handleClickAdd, handleClickRest} = useWebElements();
+export function WebElements({elements, setElements, handleClickAdd, handleClickRest}) {
+
 
   return (
     <div className="number-container">

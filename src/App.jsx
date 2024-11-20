@@ -1,12 +1,12 @@
 import "./App.css";
-import { BudBanner } from "./components/BudBanner.jsx";
-import { BudForm } from "./components/BudForm.jsx";
+import { HeaderBanner } from "./components/HeaderBanner.jsx";
+import { BudgetForm } from "./components/BudgetForm.jsx";
 
 function App() {
   return (
     <>
-      <BudBanner />
-      <BudForm />
+      <HeaderBanner />
+      <BudgetForm />
     </>
   );
 }
