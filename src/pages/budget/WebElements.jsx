@@ -1,3 +1,4 @@
+import { StandardButton } from "../../components/StandardButton";
 import "./WebElements.css";
 import PropTypes from "prop-types";
 
@@ -11,9 +12,9 @@ export function WebElements({
     <div className="number-container">
       <div className="number-input">
         <p>Pages</p>
-        <button type="button" onClick={() => handleClickRest("pages")}>
-          ➖
-        </button>
+        <StandardButton $sm type="button" onClick={() => handleClickRest("pages")}>
+          -
+        </StandardButton>
         <input
           type="number"
           value={elements.pages}
@@ -21,15 +22,15 @@ export function WebElements({
             setElements({ ...elements, pages: Number(e.target.value) })
           }
         />
-        <button type="button" onClick={() => handleClickAdd("pages")}>
-          ➕
-        </button>
+        <StandardButton $sm type="button" onClick={() => handleClickAdd("pages")}>
+          +
+        </StandardButton>
       </div>
       <div className="number-input">
         <p>Languages</p>
-        <button type="button" onClick={() => handleClickRest("languages")}>
-          ➖
-        </button>
+        <StandardButton $sm type="button" onClick={() => handleClickRest("languages")}>
+          -
+        </StandardButton>
         <input
           type="number"
           value={elements.languages}
@@ -37,9 +38,9 @@ export function WebElements({
             setElements({ ...elements, languages: Number(e.target.value) })
           }
         />
-        <button type="button" onClick={() => handleClickAdd("languages")}>
-          ➕
-        </button>
+        <StandardButton $sm type="button" onClick={() => handleClickAdd("languages")}>
+          +
+        </StandardButton>
       </div>
     </div>
   );

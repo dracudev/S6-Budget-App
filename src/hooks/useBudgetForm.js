@@ -30,6 +30,10 @@ export function useBudgetForm() {
       ...checkedItems,
       [item]: isChecked,
     });
+
+    if (item === "web" && !isChecked) {
+      setElements({ pages: 0, languages: 0 });
+    }
   }
 
   return {

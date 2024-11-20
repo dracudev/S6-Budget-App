@@ -7,7 +7,7 @@ export function Home() {
   return (
     <>
       <HeaderBanner>
-        <h1 className="text-center text-white">Welcome!</h1>
+        <h1 className="text-center text-white">Welcome to the budget calculator!</h1>
       </HeaderBanner>
 
       <Link to="/budget">
@@ -16,7 +16,7 @@ export function Home() {
 
       <CustomCard className="text-container">
         <h1 className="">Welcome to Our Service</h1>
-        <p className="lead">
+        <p className="lead mt-4">
           We are dedicated to providing you with the best quality services to
           meet your needs. Whether you are looking for web development, SEO
           optimization, or advertising solutions, we have the expertise to help
