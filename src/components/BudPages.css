@@ -20,6 +20,12 @@
     border-radius: 10px;
   }
 
+  .number-input input::-webkit-outer-spin-button,
+.number-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none; /* Chrome, Safari, Edge, Opera */
+    margin: 0;
+}
+
   .number-input p {
     margin-right: 2rem;
     margin-top: 0.7rem;

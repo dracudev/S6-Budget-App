@@ -8,7 +8,7 @@ export function useBudgetForm() {
   });
   const [budget, setBudget] = useState(0);
 
-  const handleChecked = (event, item, price) => {
+  function handleChecked (event, item, price) {
     const isChecked = event.target.checked;
     setCheckedItems({
       ...checkedItems,

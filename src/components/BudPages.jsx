@@ -1,9 +1,8 @@
-import { useState } from "react";
+import { useWebElements } from "../hooks/useWebElements";
 import "./BudPages.css";
 
 export function BudPages() {
-  const [pages, setPages] = useState(0);
-  const [languages, setLanguages] = useState(0);
+const {elements, setElements, handleClickAdd, handleClickRest} = useWebElements();
 
   return (
     <div className="number-container">
@@ -11,16 +10,16 @@ export function BudPages() {
         <p>Pages</p>
         <button
           type="button"
-          onClick={() => setPages(pages > 0 ? pages - 1 : 0)}
+          onClick={() => handleClickRest('pages')}
         >
           ➖
         </button>
         <input
           type="number"
-          value={pages}
-          onChange={(e) => setPages(Number(e.target.value))}
+          value={elements.pages}
+          onChange={(e) => setElements({ ...elements, pages: Number(e.target.value) })}
         />
-        <button type="button" onClick={() => setPages(pages + 1)}>
+        <button type="button" onClick={() => handleClickAdd('pages')}>
           ➕
         </button>
       </div>
@@ -28,16 +27,16 @@ export function BudPages() {
         <p>Languages</p>
         <button
           type="button"
-          onClick={() => setLanguages(languages > 0 ? languages - 1 : 0)}
+          onClick={() => handleClickRest('languages')}
         >
           ➖
         </button>
         <input
           type="number"
-          value={languages}
-          onChange={(e) => setLanguages(Number(e.target.value))}
+          value={elements.languages}
+          onChange={(e) => setElements({...elements, languages: Number(e.target.value)})}
         />
-        <button type="button" onClick={() => setLanguages(languages + 1)}>
+        <button type="button" onClick={() => handleClickAdd('languages')}>
           ➕
         </button>
       </div>
