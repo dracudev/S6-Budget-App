@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bannerImg from "../assets/banner.webp";
+import PropTypes from "prop-types";
 
 const Banner = styled.div`
   background-image: url(${bannerImg});
@@ -14,3 +15,7 @@ const Banner = styled.div`
 export function HeaderBanner({ children }) {
   return <Banner className="container">{children}</Banner>;
 }
+
+HeaderBanner.propTypes = {
+  children: PropTypes.node,
+};

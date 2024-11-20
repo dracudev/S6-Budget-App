@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 export function StandardButton({ children, className }) {
   const StandardButton = styled.button`
@@ -29,3 +30,8 @@ export function StandardButton({ children, className }) {
   `;
   return <StandardButton className={className}>{children}</StandardButton>;
 }
+
+StandardButton.propTypes = {
+  children: PropTypes.node,
+  className: PropTypes.string,
+};

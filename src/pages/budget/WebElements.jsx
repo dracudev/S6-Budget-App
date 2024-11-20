@@ -1,4 +1,5 @@
 import "./WebElements.css";
+import PropTypes from "prop-types";
 
 export function WebElements({
   elements,
@@ -43,3 +44,13 @@ export function WebElements({
     </div>
   );
 }
+
+WebElements.propTypes = {
+  elements: PropTypes.shape({
+    pages: PropTypes.number.isRequired,
+    languages: PropTypes.number.isRequired,
+  }).isRequired,
+  setElements: PropTypes.func.isRequired,
+  handleClickAdd: PropTypes.func.isRequired,
+  handleClickRest: PropTypes.func.isRequired,
+};
