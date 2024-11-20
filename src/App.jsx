@@ -1,13 +1,12 @@
 import "./App.css";
-import { HeaderBanner } from "./components/HeaderBanner.jsx";
-import { BudgetForm } from "./components/BudgetForm.jsx";
+import { Budget } from "./pages/budget/index.jsx";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <HeaderBanner />
-      <BudgetForm />
-    </>
+    <Routes>
+      <Route path="/budget" element={<Budget/>}></Route>
+    </Routes>
   );
 }
 
