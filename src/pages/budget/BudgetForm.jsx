@@ -21,7 +21,9 @@ export function BudgetForm() {
             <h2>Seo</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h1 className="fw-bold">300€</h1>
+          <h5>
+            <strong className="fs-1">300</strong>€
+          </h5>
           <div>
             <input
               type="checkbox"
@@ -39,7 +41,9 @@ export function BudgetForm() {
             <h2>Ads</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h1 className="fw-bold">400€</h1>
+          <h5>
+            <strong className="fs-1">400</strong>€
+          </h5>
           <div>
             <input
               type="checkbox"
@@ -57,7 +61,9 @@ export function BudgetForm() {
             <h2>Web</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h1 className="fw-bold">500€</h1>
+          <h5>
+            <strong className="fs-1">500</strong>€
+          </h5>
           <div>
             <input
               type="checkbox"
@@ -79,8 +85,9 @@ export function BudgetForm() {
       </div>
 
       <div className="ms-auto mt-4 d-flex">
-        <h3 className="me-4">Budget: </h3>
-        <h2 className="fw-bold">{budget}€</h2>
+        <h3 className="me-4">
+          Budget:&nbsp; <strong className="fs-1">{budget}</strong>€{" "}
+        </h3>
       </div>
     </div>
   );

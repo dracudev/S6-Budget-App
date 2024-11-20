@@ -8,7 +8,8 @@ export function useBudgetForm() {
     web: false,
   });
   const [budget, setBudget] = useState(0);
-  const {elements, setElements, handleClickAdd, handleClickRest} = useWebElements();
+  const { elements, setElements, handleClickAdd, handleClickRest } =
+    useWebElements();
 
   useEffect(() => {
     let newBudget = 0;
@@ -23,13 +24,13 @@ export function useBudgetForm() {
     setBudget(newBudget);
   }, [checkedItems, elements]);
 
-  function handleChecked (event, item) {
+  function handleChecked(event, item) {
     const isChecked = event.target.checked;
     setCheckedItems({
       ...checkedItems,
       [item]: isChecked,
-    })
-  };
+    });
+  }
 
   return {
     checkedItems,
@@ -38,6 +39,6 @@ export function useBudgetForm() {
     elements,
     setElements,
     handleClickAdd,
-    handleClickRest
+    handleClickRest,
   };
 }

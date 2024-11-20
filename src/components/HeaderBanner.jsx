@@ -1,9 +1,16 @@
-import './HeaderBanner.css'
+import styled from "styled-components";
+import bannerImg from "../assets/banner.webp";
 
-export function HeaderBanner() {
-    return (
-        <div className="banner container">
-            <h1 className='text-center text-white'>Get the best quality</h1>
-        </div>
-    )
+const Banner = styled.div`
+  background-image: url(${bannerImg});
+  background-size: cover;
+  height: 12rem;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export function HeaderBanner({ children }) {
+  return <Banner className="container">{children}</Banner>;
 }
