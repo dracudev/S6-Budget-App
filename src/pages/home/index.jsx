@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { HeaderBanner } from "../../components/HeaderBanner";
 import { StandardButton } from "../../components/StandardButton";
 import "./index.css";
+import { CustomCard } from "../../components/CustomCard";
 export function Home() {
   return (
     <>
@@ -13,7 +14,7 @@ export function Home() {
         <StandardButton className="my-4">Budgets</StandardButton>
       </Link>
 
-      <div className="text-container mt-4 text-center">
+      <CustomCard className="text-container">
         <h1 className="">Welcome to Our Service</h1>
         <p className="lead">
           We are dedicated to providing you with the best quality services to
@@ -28,7 +29,7 @@ export function Home() {
           strive to exceed your expectations. Thank you for choosing us as your
           trusted partner.
         </p>
-      </div>
+      </CustomCard>
     </>
   );
 }

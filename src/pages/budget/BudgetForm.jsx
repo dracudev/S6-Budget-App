@@ -1,6 +1,7 @@
 import "./BudgetForm.css";
 import { useBudgetForm } from "../../hooks/useBudgetForm";
 import { WebElements } from "./WebElements";
+import { CustomCard } from "../../components/CustomCard";
 
 export function BudgetForm() {
   const {
@@ -15,7 +16,7 @@ export function BudgetForm() {
 
   return (
     <div className="card-container">
-      <div className="card-element">
+      <CustomCard>
         <div className="card-units">
           <div>
             <h2>Seo</h2>
@@ -33,9 +34,9 @@ export function BudgetForm() {
             <label className="ms-3">Add</label>
           </div>
         </div>
-      </div>
+      </CustomCard>
 
-      <div className="card-element">
+      <CustomCard>
         <div className="card-units">
           <div>
             <h2>Ads</h2>
@@ -53,9 +54,9 @@ export function BudgetForm() {
             <label className="ms-3">Add</label>
           </div>
         </div>
-      </div>
+      </CustomCard>
 
-      <div className="card-element">
+      <CustomCard>
         <div className="card-units">
           <div>
             <h2>Web</h2>
@@ -82,7 +83,7 @@ export function BudgetForm() {
             handleClickRest={handleClickRest}
           />
         )}
-      </div>
+      </CustomCard>
 
       <div className="ms-auto mt-4 d-flex">
         <h3 className="me-4">
