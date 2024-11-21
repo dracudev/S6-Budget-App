@@ -15,9 +15,8 @@ export function BudgetForm() {
   } = useBudgetForm();
 
   return (
-    <div className="card-container">
-
-      <CustomCard>
+    <div className="form-container">
+      <CustomCard className="container">
         <div className="card-units">
           <div>
             <h2>Seo</h2>
@@ -37,13 +36,11 @@ export function BudgetForm() {
               />
               <span className="ms-3">Add</span>
             </div>
-            
           </label>
-
         </div>
       </CustomCard>
 
-      <CustomCard>
+      <CustomCard className="container">
         <div className="card-units">
           <div>
             <h2>Ads</h2>
@@ -67,7 +64,7 @@ export function BudgetForm() {
         </div>
       </CustomCard>
 
-      <CustomCard>
+      <CustomCard className="container">
         <div className="card-units">
           <div>
             <h2>Web</h2>
@@ -99,12 +96,15 @@ export function BudgetForm() {
           />
         )}
       </CustomCard>
-
-      <div className="ms-auto mt-4 d-flex">
-        <h3 className="me-4">
-          Budget:&nbsp; <strong className="fs-1">{budget}</strong>€{" "}
-        </h3>
-      </div>
+        <div className="budget">
+        <div className="my-5">
+          <h3 className="me-4">
+            Budget:&nbsp; <strong className="fs-1">{budget}</strong>€
+          </h3>
+        </div>
+        </div>
+        
+      
     </div>
   );
 }

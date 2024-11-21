@@ -1,0 +1,36 @@
+.data-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+
+
+
+.form-data {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.data-inputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-data label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-data input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.form-data input:focus {
+  border-color: #403a80;
+  outline: none;
+}

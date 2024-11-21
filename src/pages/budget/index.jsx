@@ -2,6 +2,7 @@ import { HeaderBanner } from "../../components/HeaderBanner";
 import { StandardButton } from "../../components/StandardButton";
 import { BudgetForm } from "./BudgetForm";
 import { Link } from "react-router-dom";
+import { ClientDataForm } from "./ClientDataForm";
 
 export function Budget() {
   return (
@@ -13,6 +14,7 @@ export function Budget() {
         <StandardButton className="my-4">Home</StandardButton>
       </Link>
       <BudgetForm></BudgetForm>
+      <ClientDataForm></ClientDataForm>
     </>
   );
 }

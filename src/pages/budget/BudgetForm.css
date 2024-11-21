@@ -1,21 +1,8 @@
-.card-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  width: 80%;
-  margin-bottom: 3rem;
+.form-container {
+  width: 100%;
   max-width: 1200px;
 }
 
-.card-element {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  justify-content: space-between;
-  gap: 3rem;
-  padding: 2rem;
-  align-items: center;
-}
 .card-units {
   display: flex;
   justify-content: space-between;
@@ -26,6 +13,12 @@
   width: 20px;
   height: 20px;
   accent-color: #403a80;
+}
+
+.budget {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
 }
 
 @media (max-width: 500px)  {

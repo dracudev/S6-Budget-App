@@ -14,7 +14,7 @@ export function Home() {
         <StandardButton className="my-4">Budgets</StandardButton>
       </Link>
 
-      <CustomCard className="text-container">
+      <CustomCard className="container">
         <h1 className="">Welcome to Our Service</h1>
         <p className="lead mt-4">
           We are dedicated to providing you with the best quality services to

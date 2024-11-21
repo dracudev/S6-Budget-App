@@ -8,6 +8,8 @@ const CtmCard = styled.div`
   gap: 3rem;
   padding: 2rem;
   align-items: center;
+  max-width: 1200px;
+  width: 95%;
 `;
 
 export function CustomCard({children, className}) {
