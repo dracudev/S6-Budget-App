@@ -16,6 +16,7 @@ export function BudgetForm() {
 
   return (
     <div className="card-container">
+
       <CustomCard>
         <div className="card-units">
           <div>
@@ -25,15 +26,20 @@ export function BudgetForm() {
           <h5 className="d-flex align-items-center mx-3">
             <strong className="fs-1">300</strong>€
           </h5>
-          <div className="d-flex align-items-center ">
-            <input
-            className="checkbox"
-              type="checkbox"
-              checked={checkedItems.seo}
-              onChange={(e) => handleChecked(e, "seo")}
-            />
-            <label className="ms-3">Add</label>
-          </div>
+
+          <label>
+            <div className="d-flex align-items-center ">
+              <input
+                className="checkbox"
+                type="checkbox"
+                checked={checkedItems.seo}
+                onChange={(e) => handleChecked(e, "seo")}
+              />
+              <span className="ms-3">Add</span>
+            </div>
+            
+          </label>
+
         </div>
       </CustomCard>
 
@@ -46,15 +52,18 @@ export function BudgetForm() {
           <h5 className="d-flex align-items-center mx-3">
             <strong className="fs-1">400</strong>€
           </h5>
-          <div className="d-flex align-items-center ">
-            <input
-            className="checkbox"
-              type="checkbox"
-              checked={checkedItems.ads}
-              onChange={(e) => handleChecked(e, "ads")}
-            />
-            <label className="ms-3">Add</label>
-          </div>
+
+          <label>
+            <div className="d-flex align-items-center ">
+              <input
+                className="checkbox"
+                type="checkbox"
+                checked={checkedItems.ads}
+                onChange={(e) => handleChecked(e, "ads")}
+              />
+              <span className="ms-3">Add</span>
+            </div>
+          </label>
         </div>
       </CustomCard>
 
@@ -67,14 +76,18 @@ export function BudgetForm() {
           <h5 className="d-flex align-items-center mx-3">
             <strong className="fs-1">500</strong>€
           </h5>
-          <div className="d-flex align-items-center ">
-            <input className="checkbox"
-              type="checkbox"
-              checked={checkedItems.web}
-              onChange={(e) => handleChecked(e, "web")}
-            />
-            <label className="ms-3">Add</label>
-          </div>
+
+          <label>
+            <div className="d-flex align-items-center ">
+              <input
+                className="checkbox"
+                type="checkbox"
+                checked={checkedItems.web}
+                onChange={(e) => handleChecked(e, "web")}
+              />
+              <span className="ms-3">Add</span>
+            </div>
+          </label>
         </div>
 
         {checkedItems.web && (
