@@ -2,39 +2,11 @@ import { CustomCard } from "../../components/CustomCard";
 import { StandardButton } from "../../components/StandardButton";
 import "./ClientDataForm.css";
 import { FaArrowRight } from "react-icons/fa";
-import { useBudget } from "../../contexts/useBudget";
-import { useState } from "react";
+import { useCustomerData } from "../../hooks/useCustomerData";
 
 
 export function ClientDataForm() {
-  const { checkedItems, elements, budget, setElements, setCheckedElements } = useBudget();
-  
-  const [customerData, setCustomerData] = useState({
-    text: "",
-    tel: "",
-    email: "",
-  });
-  const [submittedData, setSubmittedData] = useState(null);
-
-  const handleInputChange = (e) => {
-    const { type, value } = e.target;
-    setCustomerData((prevData) => ({
-      ...prevData,
-      [type]: value,
-    }));
-  };
-
-  function handleNewBudget(e) {
-    e.preventDefault();
-    const data = {
-      ...customerData,
-      budget,
-      elements,
-      checkedItems,
-    };
-    setSubmittedData(data);
-  };
-
+  const [customerData, submittedData, handleInputChange, handleNewBudget] = useCustomerData();
 
   return (
     <div className=" data-container">
@@ -43,6 +15,7 @@ export function ClientDataForm() {
           <div className="data-inputs">
             <input
               type="text"
+              name="text"
               placeholder="Name"
               value={customerData.text}
               onChange={handleInputChange}
@@ -50,6 +23,7 @@ export function ClientDataForm() {
             />
             <input
               type="tel"
+              name="tel"
               placeholder="Telephone"
               value={customerData.tel}
               onChange={handleInputChange}
@@ -57,6 +31,7 @@ export function ClientDataForm() {
             />
             <input
               type="email"
+              name="email"
               placeholder="Email"
               value={customerData.email}
               onChange={handleInputChange}
