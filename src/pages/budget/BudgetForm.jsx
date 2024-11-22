@@ -1,18 +1,10 @@
 import "./BudgetForm.css";
-import { useBudgetForm } from "../../hooks/useBudgetForm";
 import { WebElements } from "./WebElements";
 import { CustomCard } from "../../components/CustomCard";
+import { useBudget } from "../../contexts/useBudget";
 
 export function BudgetForm() {
-  const {
-    checkedItems,
-    budget,
-    handleChecked,
-    elements,
-    setElements,
-    handleClickAdd,
-    handleClickRest,
-  } = useBudgetForm();
+  const { checkedItems, budget, handleChecked, elements, setElements, handleClickAdd, handleClickRest } = useBudget();
 
   return (
     <div className="form-container">

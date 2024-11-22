@@ -1,8 +1,11 @@
 import { CustomCard } from "../../components/CustomCard";
 import { StandardButton } from "../../components/StandardButton";
 import "./ClientDataForm.css";
+//import { useBudget } from "../../contexts/BudgetContext";
 
 export function ClientDataForm() {
+  //const { checkedItems, handleChecked } = useBudget();
+
   return (
     <div className=" data-container">
       <CustomCard className="container">
