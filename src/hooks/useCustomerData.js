@@ -9,7 +9,7 @@ export function useCustomerData() {
     tel: "",
     email: "",
   });
-  const [submittedData, setSubmittedData] = useState(null);
+  const [submittedData, setSubmittedData] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -27,7 +27,7 @@ export function useCustomerData() {
       elements,
       checkedItems,
     };
-    setSubmittedData(data);
+    setSubmittedData((prevData) => [...prevData, data]);
   };
 
   return [customerData, submittedData, handleInputChange, handleNewBudget];

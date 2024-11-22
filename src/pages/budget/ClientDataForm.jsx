@@ -52,17 +52,17 @@ export function ClientDataForm() {
       </CustomCard>
       <hr className="my-5 dotted-hr" />
 
-      {submittedData && (
-        <CustomCard className="container">
+      {submittedData.map((data, index) => (
+        <CustomCard key={index} className="container">
           <h3>Submitted Information</h3>
-          <p><strong>Name:</strong> {submittedData.text}</p>
-          <p><strong>Telephone:</strong> {submittedData.tel}</p>
-          <p><strong>Email:</strong> {submittedData.email}</p>
-          <p><strong>Budget:</strong> {submittedData.budget}€</p>
-          <p><strong>Elements:</strong> Pages: {submittedData.elements.pages}, Languages: {submittedData.elements.languages}</p>
-          <p><strong>Checked Items:</strong> {JSON.stringify(submittedData.checkedItems)}</p>
+          <p><strong>Name:</strong> {data.text}</p>
+          <p><strong>Telephone:</strong> {data.tel}</p>
+          <p><strong>Email:</strong> {data.email}</p>
+          <p><strong>Budget:</strong> {data.budget}€</p>
+          <p><strong>Elements:</strong> Pages: {data.elements.pages}, Languages: {data.elements.languages}</p>
+          <p><strong>Checked Items:</strong> {JSON.stringify(data.checkedItems)}</p>
         </CustomCard>
-      )}
+      ))}
 
     </div>
   );
