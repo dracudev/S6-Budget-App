@@ -11,6 +11,13 @@ export function BudgetProvider({ children }) {
   const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
   const budget = useBudgetCalculation(checkedItems, elements);
 
+  const handleCheckedWithReset = (event, item) => {
+    handleChecked(event, item);
+    if (item === "web" && !event.target.checked) {
+      setElements({ pages: 0, languages: 0 });
+    }
+  };
+
   return (
     <BudgetContext.Provider
       value={{
@@ -20,7 +27,7 @@ export function BudgetProvider({ children }) {
         setElements,
         handleClickAdd,
         handleClickRest,
-        handleChecked,
+        handleChecked: handleCheckedWithReset,
         setCheckedItems,
       }}
     >

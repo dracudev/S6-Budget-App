@@ -1,6 +1,8 @@
-import { StandardButton } from "../../components/StandardButton";
 import "./WebElements.css";
 import PropTypes from "prop-types";
+import { CiCircleMinus } from "react-icons/ci";
+import { CiCirclePlus } from "react-icons/ci";
+
 
 export function WebElements({
   elements,
@@ -12,9 +14,9 @@ export function WebElements({
     <div className="number-container">
       <div className="number-input">
         <p>Pages</p>
-        <StandardButton $sm type="button" onClick={() => handleClickRest("pages")}>
-          -
-        </StandardButton>
+        <button onClick={() => handleClickRest("pages")}>
+        <CiCircleMinus />
+        </button>
         <input
           type="number"
           value={elements.pages}
@@ -22,15 +24,15 @@ export function WebElements({
             setElements({ ...elements, pages: Number(e.target.value) })
           }
         />
-        <StandardButton $sm type="button" onClick={() => handleClickAdd("pages")}>
-          +
-        </StandardButton>
+        <button type="button" onClick={() => handleClickAdd("pages")}>
+        <CiCirclePlus />
+        </button>
       </div>
       <div className="number-input">
         <p>Languages</p>
-        <StandardButton $sm type="button" onClick={() => handleClickRest("languages")}>
-          -
-        </StandardButton>
+        <button type="button" onClick={() => handleClickRest("languages")}>
+        <CiCircleMinus />
+        </button>
         <input
           type="number"
           value={elements.languages}
@@ -38,9 +40,9 @@ export function WebElements({
             setElements({ ...elements, languages: Number(e.target.value) })
           }
         />
-        <StandardButton $sm type="button" onClick={() => handleClickAdd("languages")}>
-          +
-        </StandardButton>
+        <button type="button" onClick={() => handleClickAdd("languages")}>
+        <CiCirclePlus />
+        </button>
       </div>
     </div>
   );

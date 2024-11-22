@@ -14,6 +14,7 @@ export const useBudgetCalculation = (checkedItems, elements) => {
     newBudget += elements.languages * 30;
 
     setBudget(newBudget);
+    
   }, [checkedItems, elements]);
 
   return budget;
