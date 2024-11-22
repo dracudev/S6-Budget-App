@@ -3,24 +3,22 @@
   max-width: 1200px;
 }
 
-
-
-
 .form-data {
   display: flex;
   gap: 2rem;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 
 .data-inputs {
     display: flex;
+    max-width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
     gap: 1rem;
-}
-
-.form-data label {
-  font-weight: bold;
-  color: #333;
 }
 
 .form-data input {
@@ -28,9 +26,16 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .form-data input:focus {
   border-color: #403a80;
   outline: none;
+}
+
+.dotted-hr {
+  border: none;
+  border-top: 2px dotted rgb(0, 0, 0);
 }

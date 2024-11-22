@@ -10,6 +10,7 @@ const CtmCard = styled.div`
   align-items: center;
   max-width: 1200px;
   width: 95%;
+  border: 1px solid rgba(71, 77, 82, 0.4);
 `;
 
 export function CustomCard({children, className}) {
