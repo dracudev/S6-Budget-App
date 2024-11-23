@@ -20,6 +20,7 @@ export function useCustomerData() {
   };
 
   const handleNewBudget = (e) => {
+    if (budget === 0) return;
     e.preventDefault();
     const data = {
       ...customerData,
@@ -28,7 +29,7 @@ export function useCustomerData() {
       checkedItems,
     };
 
-    if (budget === 0) return;
+
     
     setSubmittedData((prevData) => [...prevData, data]);
     setElements({ pages: 0, languages: 0 });

@@ -6,6 +6,7 @@ import { ClientDataForm } from "./ClientDataForm";
 import { FaHome } from "react-icons/fa";
 import "./index.css";
 import { useBudget } from "../../contexts/useBudget";
+import { CurrentBudgets } from "./CurrentBudgets";
 
 export function Budget() {
   const { checkedItems } = useBudget();
@@ -26,6 +27,8 @@ export function Budget() {
       {(checkedItems.web || checkedItems.seo || checkedItems.ads) && (
         <ClientDataForm />
       )}
+
+      <CurrentBudgets></CurrentBudgets>
     </>
   );
 }

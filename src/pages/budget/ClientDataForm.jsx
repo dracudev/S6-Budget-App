@@ -56,7 +56,7 @@ export function ClientDataForm() {
           </div>
         </form>
       </CustomCard>
-      <hr className="my-5 dotted-hr" />
+      
 
       {submittedData.map((data, index) => (
         <CustomCard key={index} className="container">
