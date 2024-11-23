@@ -3,6 +3,10 @@ import { HeaderBanner } from "../../components/HeaderBanner";
 import { StandardButton } from "../../components/StandardButton";
 import "./index.css";
 import { CustomCard } from "../../components/CustomCard";
+import { RiMoneyEuroCircleFill } from "react-icons/ri";
+
+
+
 export function Home() {
   return (
     <>
@@ -10,8 +14,8 @@ export function Home() {
         <h1 className="text-center text-white">Welcome to the budget calculator!</h1>
       </HeaderBanner>
 
-      <Link to="/budget">
-        <StandardButton className="my-4">Budgets</StandardButton>
+      <Link to="/budget" style={{textDecoration: "none"}}>
+        <StandardButton className="my-4 d-flex align-items-center"><RiMoneyEuroCircleFill className="me-2"/>Budgets</StandardButton>
       </Link>
 
       <CustomCard className="container">

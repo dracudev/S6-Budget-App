@@ -2,10 +2,10 @@ import { useState } from "react";
 import { useBudget } from "../contexts/useBudget";
 
 export function useCustomerData() {
-  const { checkedItems, elements, budget } = useBudget();
+  const { checkedItems, elements, budget, setElements, setCheckedItems } = useBudget();
 
   const [customerData, setCustomerData] = useState({
-    name: "",
+    text: "",
     tel: "",
     email: "",
   });
@@ -27,7 +27,21 @@ export function useCustomerData() {
       elements,
       checkedItems,
     };
+
+    if (budget === 0) return;
+    
     setSubmittedData((prevData) => [...prevData, data]);
+    setElements({ pages: 0, languages: 0 });
+    setCheckedItems({
+      seo: false,
+      ads: false,
+      web: false,
+    });
+    setCustomerData({
+      text: "",
+      tel: "",
+      email: "",
+    });
   };
 
   return [customerData, submittedData, handleInputChange, handleNewBudget];

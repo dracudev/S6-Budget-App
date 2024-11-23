@@ -14,7 +14,7 @@ export function BudgetForm() {
             <h2>Seo</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h5 className="d-flex align-items-center mx-3">
+          <h5 className="mx-3">
             <strong className="fs-1">300</strong>€
           </h5>
 
@@ -38,7 +38,7 @@ export function BudgetForm() {
             <h2>Ads</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h5 className="d-flex align-items-center mx-3">
+          <h5 className="mx-3">
             <strong className="fs-1">400</strong>€
           </h5>
 
@@ -62,7 +62,7 @@ export function BudgetForm() {
             <h2>Web</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          <h5 className="d-flex align-items-center mx-3">
+          <h5 className=" mx-3">
             <strong className="fs-1">500</strong>€
           </h5>
 

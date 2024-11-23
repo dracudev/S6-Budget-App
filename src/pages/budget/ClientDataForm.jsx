@@ -19,6 +19,8 @@ export function ClientDataForm() {
               placeholder="Name"
               value={customerData.text}
               onChange={handleInputChange}
+              pattern=".{2,}"
+    title="Name must have at least 2 characters"
               required
             />
             <input
@@ -27,6 +29,8 @@ export function ClientDataForm() {
               placeholder="Telephone"
               value={customerData.tel}
               onChange={handleInputChange}
+               pattern="\d{9}"
+    title="Telephone must be 9 digits"
               required
             />
             <input
@@ -35,6 +39,8 @@ export function ClientDataForm() {
               placeholder="Email"
               value={customerData.email}
               onChange={handleInputChange}
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+    title="Please enter a valid email address"
               required
             />
           </div>
