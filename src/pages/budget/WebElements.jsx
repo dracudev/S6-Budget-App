@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { CiCircleMinus } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 
-
 export function WebElements({
   elements,
   setElements,
@@ -13,36 +12,40 @@ export function WebElements({
   return (
     <div className="number-container">
       <div className="number-input">
-        <p>Pages</p>
-        <button onClick={() => handleClickRest("pages")}>
-        <CiCircleMinus />
-        </button>
-        <input
-          type="number"
-          value={elements.pages}
-          onChange={(e) =>
-            setElements({ ...elements, pages: Number(e.target.value) })
-          }
-        />
-        <button type="button" onClick={() => handleClickAdd("pages")}>
-        <CiCirclePlus />
-        </button>
+        <p className="pages">Pages</p>
+        <div className="d-flex">
+          <button onClick={() => handleClickRest("pages")}>
+            <CiCircleMinus />
+          </button>
+          <input
+            type="number"
+            value={elements.pages}
+            onChange={(e) =>
+              setElements({ ...elements, pages: Number(e.target.value) })
+            }
+          />
+          <button type="button" onClick={() => handleClickAdd("pages")}>
+            <CiCirclePlus />
+          </button>
+        </div>
       </div>
       <div className="number-input">
         <p>Languages</p>
-        <button type="button" onClick={() => handleClickRest("languages")}>
-        <CiCircleMinus />
-        </button>
-        <input
-          type="number"
-          value={elements.languages}
-          onChange={(e) =>
-            setElements({ ...elements, languages: Number(e.target.value) })
-          }
-        />
-        <button type="button" onClick={() => handleClickAdd("languages")}>
-        <CiCirclePlus />
-        </button>
+        <div className="d-flex">
+          <button type="button" onClick={() => handleClickRest("languages")}>
+            <CiCircleMinus />
+          </button>
+          <input
+            type="number"
+            value={elements.languages}
+            onChange={(e) =>
+              setElements({ ...elements, languages: Number(e.target.value) })
+            }
+          />
+          <button type="button" onClick={() => handleClickAdd("languages")}>
+            <CiCirclePlus />
+          </button>
+        </div>
       </div>
     </div>
   );

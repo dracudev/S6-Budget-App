@@ -8,7 +8,7 @@ export function BudgetForm() {
 
   return (
     <div className="form-container">
-      <CustomCard className="container">
+      <CustomCard className={checkedItems.seo ? 'border-checked' : ''}>
         <div className="card-units">
           <div>
             <h2>Seo</h2>
@@ -32,7 +32,7 @@ export function BudgetForm() {
         </div>
       </CustomCard>
 
-      <CustomCard className="container">
+      <CustomCard className={checkedItems.ads ? 'border-checked' : ''}>
         <div className="card-units">
           <div>
             <h2>Ads</h2>
@@ -56,7 +56,7 @@ export function BudgetForm() {
         </div>
       </CustomCard>
 
-      <CustomCard className="container">
+      <CustomCard className={checkedItems.web ? 'border-checked' : ''}>
         <div className="card-units">
           <div>
             <h2>Web</h2>

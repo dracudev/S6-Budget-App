@@ -3,7 +3,7 @@ import { useBudget } from "../../contexts/useBudget";
 import { CustomCard } from "../../components/CustomCard";
 
 export function CurrentBudgets() {
-  const {submittedData} = useBudget();
+  const { submittedData } = useBudget();
   if (!submittedData) {
     return <div>No budgets submitted yet.</div>;
   }
@@ -17,33 +17,36 @@ export function CurrentBudgets() {
         <div className="ms-auto me-3">
           <h2>Filters</h2>
         </div>
+      </div>
 
-        {(submittedData.length === 0) && <p>No current budgets</p>}
-        
+      <div className="mt-5 d-flex align-items-center justify-content-center">
+        {submittedData.length === 0 && <h4 className="">No current budgets</h4>}
+
         {submittedData.map((data, index) => (
-        <CustomCard key={index} className="container">
-          <h3>Submitted Information</h3>
-          <p>
-            <strong>Name:</strong> {data.text}
-          </p>
-          <p>
-            <strong>Telephone:</strong> {data.tel}
-          </p>
-          <p>
-            <strong>Email:</strong> {data.email}
-          </p>
-          <p>
-            <strong>Budget:</strong> {data.budget}€
-          </p>
-          <p>
-            <strong>Elements:</strong> Pages: {data.elements.pages}, Languages:{" "}
-            {data.elements.languages}
-          </p>
-          <p>
-            <strong>Checked Items:</strong> {JSON.stringify(data.checkedItems)}
-          </p>
-        </CustomCard>
-      ))}
+          <CustomCard key={index} className="container">
+            <h3>Submitted Information</h3>
+            <p>
+              <strong>Name:</strong> {data.text}
+            </p>
+            <p>
+              <strong>Telephone:</strong> {data.tel}
+            </p>
+            <p>
+              <strong>Email:</strong> {data.email}
+            </p>
+            <p>
+              <strong>Budget:</strong> {data.budget}€
+            </p>
+            <p>
+              <strong>Elements:</strong> Pages: {data.elements.pages},
+              Languages: {data.elements.languages}
+            </p>
+            <p>
+              <strong>Checked Items:</strong>{" "}
+              {JSON.stringify(data.checkedItems)}
+            </p>
+          </CustomCard>
+        ))}
       </div>
     </div>
   );

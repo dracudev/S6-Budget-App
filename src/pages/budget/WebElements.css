@@ -8,7 +8,7 @@
 .number-input {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 3rem;
 }
 
 .number-input input {
@@ -27,11 +27,16 @@
 }
 
 .number-input p {
-  margin-right: 2rem;
   margin-top: 0.7rem;
 }
 
-.number-container button:hover {
-  background-color: #403a8063;
-  border-radius: 10px;
+@media (max-width: 500px)  {
+  .number-container {
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  .pages {
+    margin-right: 2.2rem;
+  }
 }
