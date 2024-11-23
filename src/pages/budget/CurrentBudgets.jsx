@@ -1,6 +1,12 @@
 import "./CurrentBudgets.css";
+import { useBudget } from "../../contexts/useBudget";
+import { CustomCard } from "../../components/CustomCard";
 
 export function CurrentBudgets() {
+  const {submittedData} = useBudget();
+  if (!submittedData) {
+    return <div>No budgets submitted yet.</div>;
+  }
   return (
     <div className=" data-container">
       <hr className="mt-3 mb-5 dotted-hr" />
@@ -12,10 +18,33 @@ export function CurrentBudgets() {
           <h2>Filters</h2>
         </div>
 
+        {(submittedData.length === 0) && <p>No current budgets</p>}
         
+        {submittedData.map((data, index) => (
+        <CustomCard key={index} className="container">
+          <h3>Submitted Information</h3>
+          <p>
+            <strong>Name:</strong> {data.text}
+          </p>
+          <p>
+            <strong>Telephone:</strong> {data.tel}
+          </p>
+          <p>
+            <strong>Email:</strong> {data.email}
+          </p>
+          <p>
+            <strong>Budget:</strong> {data.budget}€
+          </p>
+          <p>
+            <strong>Elements:</strong> Pages: {data.elements.pages}, Languages:{" "}
+            {data.elements.languages}
+          </p>
+          <p>
+            <strong>Checked Items:</strong> {JSON.stringify(data.checkedItems)}
+          </p>
+        </CustomCard>
+      ))}
       </div>
     </div>
   );
 }
-
-//{!submittedData && <p>No current budgets</p>}

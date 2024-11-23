@@ -2,11 +2,11 @@ import { CustomCard } from "../../components/CustomCard";
 import { StandardButton } from "../../components/StandardButton";
 import "./ClientDataForm.css";
 import { FaArrowRight } from "react-icons/fa";
-import { useCustomerData } from "../../hooks/useCustomerData";
-
+import { useBudget } from "../../contexts/useBudget";
 
 export function ClientDataForm() {
-  const [customerData, submittedData, handleInputChange, handleNewBudget] = useCustomerData();
+  const {customerData, handleInputChange, handleNewBudget} =
+    useBudget();
 
   return (
     <div className=" data-container">
@@ -20,7 +20,7 @@ export function ClientDataForm() {
               value={customerData.text}
               onChange={handleInputChange}
               pattern=".{2,}"
-    title="Name must have at least 2 characters"
+              title="Name must have at least 2 characters"
               required
             />
             <input
@@ -29,8 +29,8 @@ export function ClientDataForm() {
               placeholder="Telephone"
               value={customerData.tel}
               onChange={handleInputChange}
-               pattern="\d{9}"
-    title="Telephone must be 9 digits"
+              pattern="\d{9}"
+              title="Telephone must be 9 digits"
               required
             />
             <input
@@ -40,7 +40,7 @@ export function ClientDataForm() {
               value={customerData.email}
               onChange={handleInputChange}
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-    title="Please enter a valid email address"
+              title="Please enter a valid email address"
               required
             />
           </div>
@@ -56,20 +56,6 @@ export function ClientDataForm() {
           </div>
         </form>
       </CustomCard>
-      
-
-      {submittedData.map((data, index) => (
-        <CustomCard key={index} className="container">
-          <h3>Submitted Information</h3>
-          <p><strong>Name:</strong> {data.text}</p>
-          <p><strong>Telephone:</strong> {data.tel}</p>
-          <p><strong>Email:</strong> {data.email}</p>
-          <p><strong>Budget:</strong> {data.budget}€</p>
-          <p><strong>Elements:</strong> Pages: {data.elements.pages}, Languages: {data.elements.languages}</p>
-          <p><strong>Checked Items:</strong> {JSON.stringify(data.checkedItems)}</p>
-        </CustomCard>
-      ))}
-
     </div>
   );
 }
