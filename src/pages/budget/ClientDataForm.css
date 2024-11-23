@@ -1,6 +1,7 @@
 .data-container {
   width: 100%;
   max-width: 1200px;
+  margin-bottom: 3rem;
 }
 
 .form-data {
