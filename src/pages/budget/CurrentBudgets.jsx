@@ -24,7 +24,7 @@ export function CurrentBudgets() {
           <CustomCard key={index} className="container mb-3  ">
             <div className="card-items">
               <div className="card-section">
-                <div>
+                <div className="d-flex flex-column align-items-center">
                   <h2>
                     <strong>{data.text}</strong>
                   </h2>
@@ -34,11 +34,11 @@ export function CurrentBudgets() {
               </div>
 
               <div className="card-section">
-                <div>
+                <div className="d-flex flex-column align-items-center justify-content-center">
                   <p className="m-0">
                     <strong>Contracted services:</strong>
                   </p>
-                  <ul className="mt-2">
+                  <ul className="mt-2 d-flex flex-column">
                     {Object.keys(data.checkedItems).map((item) => {
                       if (data.checkedItems[item]) {
                         if (item === "web") {
