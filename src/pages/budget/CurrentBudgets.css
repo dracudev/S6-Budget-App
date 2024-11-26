@@ -1,10 +1,47 @@
-.data-container {
+.budget-container {
     width: 100%;
     max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 
+  .card-items {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    width: 100%;
+  }
   
 .dotted-hr {
     border: none;
     border-top: 2px dashed rgb(0, 0, 0);
+  }
+
+  @media (max-width: 500px) {
+    .card-items {
+      flex-direction: column;
+      margin: 0;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .card-section {
+      text-align: center;
+      margin: 0.5rem;
+    }
+    .card-section ul {
+      text-align: start;
+    }
   }
