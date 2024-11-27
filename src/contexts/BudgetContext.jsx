@@ -13,7 +13,7 @@ export function BudgetProvider({ children }) {
   const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
   const budget = useBudgetCalculation(checkedItems, elements);
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
-  const { handleFilterClick } = useFilter();
+  const { handleFilterClick, sortState } = useFilter();
   const [filteredData, setFilteredData] = useState(submittedData);
 
   useEffect(() => {
@@ -57,6 +57,7 @@ export function BudgetProvider({ children }) {
           ),
         filteredData,
         handleFilter,
+        sortState
       }}
     >
       {children}

@@ -10,9 +10,6 @@
   align-items: center;
   gap: 3rem;
 }
-.number-input .pages {
-  margin-left: 2.15rem;
-}
 
 .number-input input {
   width: 40px;
@@ -38,5 +35,8 @@
     align-items: center;
     justify-content: center;
     margin-top: 2rem;
+  }
+  .pages {
+    margin-left: 2.2rem;
   }
 }

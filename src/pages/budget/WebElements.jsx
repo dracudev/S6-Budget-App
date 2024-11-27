@@ -10,15 +10,17 @@ export function WebElements({
   handleClickAdd,
   handleClickRest,
 }) {
-  const {modalShow, modalContent, handleModal, handleClose} = useModal();
+  const { modalShow, modalContent, handleModal, handleClose } = useModal();
 
   return (
     <div className="number-container">
       <div className="number-input">
-        <button onClick={() => handleModal("pages")}>
-          <CiCircleInfo />
-        </button>
-        <p className="pages">Pages</p>
+        <p className="pages d-flex align-items-center justify-content-center">
+          <button className="me-2" onClick={() => handleModal("pages")}>
+            <CiCircleInfo />
+          </button>
+          Pages
+        </p>
         <div className="d-flex">
           <button onClick={() => handleClickRest("pages")}>
             <CiCircleMinus />
@@ -36,10 +38,12 @@ export function WebElements({
         </div>
       </div>
       <div className="number-input">
-        <button onClick={() => handleModal("languages")}>
-          <CiCircleInfo />
-        </button>
-        <p>Languages</p>
+        <p className="d-flex align-items-center justify-content-center">
+          <button className="me-2" onClick={() => handleModal("languages")}>
+            <CiCircleInfo />
+          </button>
+          Languages
+        </p>
         <div className="d-flex">
           <button type="button" onClick={() => handleClickRest("languages")}>
             <CiCircleMinus />
