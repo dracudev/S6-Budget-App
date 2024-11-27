@@ -19,7 +19,7 @@ export function BudgetForm() {
           </h5>
 
           <label>
-            <div className="d-flex align-items-center ">
+            <div className="d-flex align-items-center add-button">
               <input
                 className="checkbox"
                 type="checkbox"
@@ -43,7 +43,7 @@ export function BudgetForm() {
           </h5>
 
           <label>
-            <div className="d-flex align-items-center ">
+            <div className="d-flex align-items-center add-button">
               <input
                 className="checkbox"
                 type="checkbox"
@@ -67,7 +67,7 @@ export function BudgetForm() {
           </h5>
 
           <label>
-            <div className="d-flex align-items-center ">
+            <div className="d-flex align-items-center add-button">
               <input
                 className="checkbox"
                 type="checkbox"
