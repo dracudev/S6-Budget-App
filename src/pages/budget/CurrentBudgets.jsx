@@ -1,34 +1,21 @@
+
 import "./CurrentBudgets.css";
-import { useBudget } from "../../contexts/useBudget";
 import { CustomCard } from "../../components/CustomCard";
 import { BudgetFilter } from "./BudgetFilter";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useBudget } from "../../contexts/useBudget";
 
 export function CurrentBudgets() {
-  const { submittedData } = useBudget();
-  const [filteredData, setFilteredData] = useState([]);
-
-  useEffect(() => {
-    if (submittedData && submittedData.length > 0) {
-      setFilteredData(submittedData);
-    } else {
-      setFilteredData([]);
-    }
-  }, [submittedData]);
+  const { filteredData } = useBudget();
 
   return (
-    <div className=" budget-container">
+    <div className="budget-container">
       <hr className="mt-3 mb-5 dotted-hr" />
       <div className="d-flex">
         <h2 className="ms-3">
           <strong>Current budgets:</strong>
         </h2>
         <div className="ms-auto me-3">
-          <BudgetFilter
-            data={submittedData}
-            setFilteredData={setFilteredData}
-          />
+          <BudgetFilter />
         </div>
       </div>
 
