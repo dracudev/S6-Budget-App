@@ -7,7 +7,7 @@ export function InfoModal({ show, onHide, title, description }) {
       <Modal.Body className="d-flex align-items-center justify-content-center flex-column">
         <div className="d-flex align-items-center justify-content-center flex-column m-5">
         <h3 className="py-3"><strong>{title}</strong></h3>
-        <p className="py-3">{description}</p>
+        <p className="py-3 text-center">{description}</p>
         </div>
       </Modal.Body>
     </Modal>
