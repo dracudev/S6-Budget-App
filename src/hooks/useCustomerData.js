@@ -24,6 +24,7 @@ export function useCustomerData() {
       budget,
       elements,
       checkedItems,
+      timestamp: new Date().toLocaleString(),
     };
     setSubmittedData((prevData) => [...prevData, data]);
     setElements({ pages: 0, languages: 0 });
