@@ -1,12 +1,11 @@
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import BudgetContext from "./BudgetContext";
 import PropTypes from "prop-types";
 import { useWebElements } from "../hooks/useWebElements";
 import { useCheckedItems } from "../hooks/useCheckedItems";
 import { useBudgetCalculation } from "../hooks/useBudgetCalculation";
 import { useCustomerData } from "../hooks/useCustomerData";
 import { useFilter } from "../hooks/useFilter";
-
-const BudgetContext = createContext();
 
 export function BudgetProvider({ children }) {
   const { checkedItems, handleChecked, setCheckedItems } = useCheckedItems();
@@ -15,6 +14,7 @@ export function BudgetProvider({ children }) {
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
   const { handleFilterClick, handleSearch, sortState } = useFilter();
   const [filteredData, setFilteredData] = useState(submittedData);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     setFilteredData(submittedData);
@@ -28,13 +28,16 @@ export function BudgetProvider({ children }) {
   };
 
   const handleFilter = (type) => {
-    const sortedData = handleFilterClick(type, submittedData);
-    setFilteredData(sortedData);
+    let data = handleSearch(submittedData, searchTerm);
+    data = handleFilterClick(type, data);
+    setFilteredData(data);
   };
 
-  const handleSearchChange = (searchTerm) => {
-    const searchedData = handleSearch(submittedData, searchTerm);
-    setFilteredData(searchedData);
+  const handleSearchChange = (term) => {
+    setSearchTerm(term);
+    let data = handleSearch(submittedData, term);
+    data = handleFilterClick(sortState.date !== "none" ? "date" : sortState.user !== "none" ? "user" : "amount", data);
+    setFilteredData(data);
   };
 
   return (
@@ -75,4 +78,4 @@ BudgetProvider.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-export { BudgetContext };
+export default BudgetProvider;
