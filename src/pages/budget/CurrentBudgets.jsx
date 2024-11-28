@@ -11,7 +11,7 @@ export function CurrentBudgets() {
     <div className="budget-container">
       <hr className="mt-3 mb-5 dotted-hr" />
       <div className="d-flex">
-        <h2 className="ms-3">
+        <h2 className="ms-sm-3">
           <strong>Current budgets:</strong>
         </h2>
         
