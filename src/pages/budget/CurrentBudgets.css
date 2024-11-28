@@ -24,11 +24,14 @@
   }
   
 .dotted-hr {
+  display: block;
     border: none;
     border-top: 2px dashed rgb(0, 0, 0);
+  z-index: 1;
+  width: 100%;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 550px) {
     .card-items {
       flex-direction: column;
       margin: 0;
@@ -44,4 +47,8 @@
     .card-section ul {
       text-align: start;
     }
-  }
+    .budget-container {
+      display: flex;
+      align-items: center;
+    }
+    }

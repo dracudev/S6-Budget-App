@@ -14,11 +14,11 @@ export function CurrentBudgets() {
         <h2 className="ms-3">
           <strong>Current budgets:</strong>
         </h2>
-        <div className="ms-auto me-3">
+        
+      </div>
+      <div className="ms-auto me-3 budget-filter-container">
           <BudgetFilter />
         </div>
-      </div>
-
       <div className="mt-5 d-flex flex-column">
         {filteredData && filteredData.length > 0 ? (
           filteredData.map((data, index) => (
