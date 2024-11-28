@@ -49,7 +49,7 @@ export function BudgetFilter() {
             {sortState.amount === "desc" && <GoTriangleDown className="ms-2" />}
           </StandardButton>
           <StandardButton
-            className="d-flex align-items-center me-3"
+            className="d-flex align-items-center"
             onClick={() => handleFilter("user")}
           >
             Name
