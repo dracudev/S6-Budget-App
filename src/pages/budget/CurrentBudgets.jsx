@@ -17,10 +17,10 @@ export function CurrentBudgets() {
       <div className="ms-auto me-3 budget-filter-container">
         <BudgetFilter />
       </div>
-      <div className="mt-5 d-flex flex-column">
+      <div className="w-100 mt-5 ">
         {filteredData && filteredData.length > 0 ? (
           filteredData.map((data, index) => (
-            <CustomCard key={index} className="container mb-3">
+            <CustomCard key={index} className="card-current container mb-3">
               <div className="card-items">
                 <div className="card-section">
                   <div className="d-flex flex-column align-items-center">
