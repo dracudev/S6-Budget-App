@@ -1,4 +1,3 @@
-
 import "./CurrentBudgets.css";
 import { CustomCard } from "../../components/CustomCard";
 import { BudgetFilter } from "./BudgetFilter";
@@ -14,11 +13,10 @@ export function CurrentBudgets() {
         <h2 className="ms-sm-3">
           <strong>Current budgets:</strong>
         </h2>
-        
       </div>
       <div className="ms-auto me-3 budget-filter-container">
-          <BudgetFilter />
-        </div>
+        <BudgetFilter />
+      </div>
       <div className="mt-5 d-flex flex-column">
         {filteredData && filteredData.length > 0 ? (
           filteredData.map((data, index) => (
@@ -27,7 +25,7 @@ export function CurrentBudgets() {
                 <div className="card-section">
                   <div className="d-flex flex-column align-items-center">
                     <h2>
-                      <strong>{data.text}</strong>
+                      <strong>{data.user}</strong>
                     </h2>
                     <p className="lead m-0">{data.email}</p>
                     <p className="lead m-0">{data.tel}</p>

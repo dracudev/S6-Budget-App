@@ -13,7 +13,7 @@ export function BudgetProvider({ children }) {
   const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
   const budget = useBudgetCalculation(checkedItems, elements);
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
-  const { handleFilterClick, sortState } = useFilter();
+  const { handleFilterClick, handleSearch, sortState } = useFilter();
   const [filteredData, setFilteredData] = useState(submittedData);
 
   useEffect(() => {
@@ -30,6 +30,11 @@ export function BudgetProvider({ children }) {
   const handleFilter = (type) => {
     const sortedData = handleFilterClick(type, submittedData);
     setFilteredData(sortedData);
+  };
+
+  const handleSearchChange = (searchTerm) => {
+    const searchedData = handleSearch(submittedData, searchTerm);
+    setFilteredData(searchedData);
   };
 
   return (
@@ -57,7 +62,8 @@ export function BudgetProvider({ children }) {
           ),
         filteredData,
         handleFilter,
-        sortState
+        handleSearchChange,
+        sortState,
       }}
     >
       {children}

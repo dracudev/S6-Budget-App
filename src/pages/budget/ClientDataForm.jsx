@@ -15,9 +15,9 @@ export function ClientDataForm() {
           <div className="data-inputs">
             <input
               type="text"
-              name="text"
+              name="user"
               placeholder="Name"
-              value={customerData.text}
+              value={customerData.user}
               onChange={handleInputChange}
               pattern=".{2,}"
               title="Name must have at least 2 characters"

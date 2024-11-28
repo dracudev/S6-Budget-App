@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export function useCustomerData() {
   const [customerData, setCustomerData] = useState({
-    text: "",
+    user: "",
     tel: "",
     email: "",
   });
@@ -34,7 +34,7 @@ export function useCustomerData() {
       web: false,
     });
     setCustomerData({
-      text: "",
+      user: "",
       tel: "",
       email: "",
     });
