@@ -1,12 +1,15 @@
 import { parse } from "date-fns";
 import { useState } from "react";
 
-export function useFilter() {
+export function useFilter(submittedData, isYearly) {
   const [sortState, setSortState] = useState({
     date: "none",
     user: "none",
     amount: "none",
   });
+
+  const [filteredData, setFilteredData] = useState(submittedData);
+  const [searchTerm, setSearchTerm] = useState("");
 
   function filterData(data, order) {
     return [...data].sort((a, b) => {
@@ -69,9 +72,34 @@ export function useFilter() {
     );
   }
 
+  const handleFilter = (type) => {
+    let data = handleSearch(submittedData, searchTerm);
+    data = handleFilterClick(type, data);
+    setFilteredData(data);
+  };
+
+  const handleSearchChange = (term) => {
+    setSearchTerm(term);
+    let data = handleSearch(submittedData, term);
+    data = handleFilterClick(
+      sortState.date !== "none"
+        ? "date"
+        : sortState.user !== "none"
+        ? "user"
+        : "amount",
+      data
+    );
+    setFilteredData(data);
+  };
+
+  const getPrice = (price) => (isYearly ? price * 0.8 : price);
+
   return {
-    handleFilterClick,
-    handleSearch,
     sortState,
+    filteredData,
+    setFilteredData,
+    handleFilter,
+    handleSearchChange,
+    getPrice
   };
 }
