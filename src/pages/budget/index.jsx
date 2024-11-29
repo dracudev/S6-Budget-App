@@ -10,12 +10,7 @@ import { CurrentBudgets } from "./CurrentBudgets";
 import SwitchButton from "../../components/SwitchButton";
 
 export function Budget() {
-  const { checkedItems, isYearly, setIsYearly } = useBudget();
-
-
-  const handleSwitchClick = () => {
-    setIsYearly(!isYearly);
-  };
+  const { checkedItems, isYearly, handleSwitchClick } = useBudget();
 
   return (
     <>
@@ -25,18 +20,22 @@ export function Budget() {
 
       <div className="w-75 d-flex gap-5 justify-content-around btn-container">
         <div>
-        <Link
-          to="/"
-          style={{ textDecoration: "none" }}
-          className="align-items-start"
-        >
-          <StandardButton className="my-4 d-flex align-items-center">
-            <FaHome className="me-2" /> Home
-          </StandardButton>
-        </Link>
+          <Link
+            to="/"
+            style={{ textDecoration: "none" }}
+            className="align-items-start"
+          >
+            <StandardButton className="my-4 d-flex align-items-center">
+              <FaHome className="me-2" /> Home
+            </StandardButton>
+          </Link>
         </div>
         <div className="d-flex align-items-center">
-        <SwitchButton textL={"Monthly"} textR={"Yearly"} onClick={handleSwitchClick}></SwitchButton>
+          <SwitchButton
+            textL={"Monthly"}
+            textR={"Yearly"}
+            onClick={handleSwitchClick}
+          ></SwitchButton>
         </div>
       </div>
 

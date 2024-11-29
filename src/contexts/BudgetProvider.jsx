@@ -6,11 +6,12 @@ import { useCheckedItems } from "../hooks/useCheckedItems";
 import { useBudgetCalculation } from "../hooks/useBudgetCalculation";
 import { useCustomerData } from "../hooks/useCustomerData";
 import { useFilter } from "../hooks/useFilter";
+import { useYearly } from "../hooks/useYearly";
 
 export function BudgetProvider({ children }) {
   const { checkedItems, handleChecked, setCheckedItems } = useCheckedItems();
   const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
-  const [isYearly, setIsYearly] = useState(false);
+  const { isYearly, handleSwitchClick } = useYearly();
   const budget = useBudgetCalculation(checkedItems, elements, isYearly);
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
   const { handleFilterClick, handleSearch, sortState } = useFilter();
@@ -37,7 +38,14 @@ export function BudgetProvider({ children }) {
   const handleSearchChange = (term) => {
     setSearchTerm(term);
     let data = handleSearch(submittedData, term);
-    data = handleFilterClick(sortState.date !== "none" ? "date" : sortState.user !== "none" ? "user" : "amount", data);
+    data = handleFilterClick(
+      sortState.date !== "none"
+        ? "date"
+        : sortState.user !== "none"
+        ? "user"
+        : "amount",
+      data
+    );
     setFilteredData(data);
   };
 
@@ -71,8 +79,8 @@ export function BudgetProvider({ children }) {
         handleSearchChange,
         sortState,
         isYearly,
-        setIsYearly,
-        getPrice
+        handleSwitchClick,
+        getPrice,
       }}
     >
       {children}

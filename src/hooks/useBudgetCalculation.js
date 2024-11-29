@@ -10,14 +10,14 @@ export const useBudgetCalculation = (checkedItems, elements, isYearly) => {
     if (checkedItems.ads) newBudget += 400;
     if (checkedItems.web) newBudget += 500;
 
-    newBudget += elements.pages * 30;
-    newBudget += elements.languages * 30;
-
     if (isYearly) {
       newBudget *= 0.8;
     }
+
+    newBudget += elements.pages * 30;
+    newBudget += elements.languages * 30;
+
     setBudget(newBudget);
-    
   }, [checkedItems, elements, isYearly]);
 
   return budget;

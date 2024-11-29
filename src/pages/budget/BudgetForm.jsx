@@ -4,11 +4,23 @@ import { CustomCard } from "../../components/CustomCard";
 import { useBudget } from "../../contexts/useBudget";
 
 export function BudgetForm() {
-  const { checkedItems, budget, handleChecked, elements, setElements, handleClickAdd, handleClickRest, isYearly, getPrice } = useBudget();
+  const {
+    checkedItems,
+    budget,
+    handleChecked,
+    elements,
+    setElements,
+    handleClickAdd,
+    handleClickRest,
+    isYearly,
+    getPrice,
+  } = useBudget();
 
   return (
     <div className="form-container">
-      <CustomCard className={`container ${checkedItems.seo ? 'border-checked' : ''}`}>
+      <CustomCard
+        className={`container ${checkedItems.seo ? "border-checked" : ""}`}
+      >
         <div className="card-units">
           <div>
             <h2>Seo</h2>
@@ -33,7 +45,9 @@ export function BudgetForm() {
         </div>
       </CustomCard>
 
-      <CustomCard className={`container ${checkedItems.ads ? 'border-checked' : ''}`}>
+      <CustomCard
+        className={`container ${checkedItems.ads ? "border-checked" : ""}`}
+      >
         <div className="card-units">
           <div>
             <h2>Ads</h2>
@@ -58,7 +72,9 @@ export function BudgetForm() {
         </div>
       </CustomCard>
 
-      <CustomCard className={`container ${checkedItems.web ? 'border-checked' : ''}`}>
+      <CustomCard
+        className={`container ${checkedItems.web ? "border-checked" : ""}`}
+      >
         <div className="card-units">
           <div>
             <h2>Web</h2>
@@ -91,15 +107,13 @@ export function BudgetForm() {
           />
         )}
       </CustomCard>
-        <div className="budget mb-3">
+      <div className="budget mb-3">
         <div className="my-5">
           <h3 className="me-5">
             Budget:&nbsp; <strong className="fs-1">{budget}</strong>€
           </h3>
         </div>
-        </div>
-        
-      
+      </div>
     </div>
   );
 }
