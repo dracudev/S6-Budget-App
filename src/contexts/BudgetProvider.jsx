@@ -11,26 +11,21 @@ import { useUrlState } from "../hooks/useUrlState";
 
 export function BudgetProvider({ children }) {
   const { checkedItems, handleChecked, setCheckedItems } = useCheckedItems();
-  const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
+  const { elements, setElements, handleClickAdd, handleClickRest, handleCheckedWithReset } = useWebElements(handleChecked);
   const { isYearly, setIsYearly, handleSwitchClick } = useYearly();
   const budget = useBudgetCalculation(checkedItems, elements, isYearly);
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
   const { handleFilterClick, handleSearch, sortState } = useFilter();
   const [filteredData, setFilteredData] = useState(submittedData);
   const [searchTerm, setSearchTerm] = useState("");
-
+  
   useUrlState({ checkedItems, elements, isYearly, setCheckedItems, setElements, setIsYearly });
 
   useEffect(() => {
     setFilteredData(submittedData);
   }, [submittedData]);
 
-  const handleCheckedWithReset = (event, item) => {
-    handleChecked(event, item);
-    if (item === "web" && !event.target.checked) {
-      setElements({ pages: 0, languages: 0 });
-    }
-  };
+
 
   const handleFilter = (type) => {
     let data = handleSearch(submittedData, searchTerm);

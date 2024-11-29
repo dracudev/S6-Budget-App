@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export function useWebElements() {
+export function useWebElements(handleChecked) {
   const [elements, setElements] = useState({
     pages: 0,
     languages: 0,
@@ -19,11 +19,18 @@ export function useWebElements() {
       [type]: Math.max(prevElements[type] - 1, 0),
     }));
   }
+  const handleCheckedWithReset = (event, item) => {
+    handleChecked(event, item);
+    if (item === "web" && !event.target.checked) {
+      setElements({ pages: 0, languages: 0 });
+    }
+  };
 
   return {
     elements,
     setElements,
     handleClickAdd,
     handleClickRest,
+    handleCheckedWithReset
   };
 }
