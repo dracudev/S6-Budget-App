@@ -10,7 +10,8 @@ import { useFilter } from "../hooks/useFilter";
 export function BudgetProvider({ children }) {
   const { checkedItems, handleChecked, setCheckedItems } = useCheckedItems();
   const { elements, setElements, handleClickAdd, handleClickRest } = useWebElements();
-  const budget = useBudgetCalculation(checkedItems, elements);
+  const [isYearly, setIsYearly] = useState(false);
+  const budget = useBudgetCalculation(checkedItems, elements, isYearly);
   const { customerData, submittedData, handleInputChange, handleNewBudget } = useCustomerData();
   const { handleFilterClick, handleSearch, sortState } = useFilter();
   const [filteredData, setFilteredData] = useState(submittedData);
@@ -40,6 +41,8 @@ export function BudgetProvider({ children }) {
     setFilteredData(data);
   };
 
+  const getPrice = (price) => (isYearly ? price * 0.8 : price);
+
   return (
     <BudgetContext.Provider
       value={{
@@ -67,6 +70,9 @@ export function BudgetProvider({ children }) {
         handleFilter,
         handleSearchChange,
         sortState,
+        isYearly,
+        setIsYearly,
+        getPrice
       }}
     >
       {children}

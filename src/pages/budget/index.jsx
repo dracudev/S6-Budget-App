@@ -8,11 +8,10 @@ import "./index.css";
 import { useBudget } from "../../contexts/useBudget";
 import { CurrentBudgets } from "./CurrentBudgets";
 import SwitchButton from "../../components/SwitchButton";
-import { useState } from "react";
 
 export function Budget() {
-  const { checkedItems } = useBudget();
-  const [isYearly, setIsYearly] = useState(false);
+  const { checkedItems, isYearly, setIsYearly } = useBudget();
+
 
   const handleSwitchClick = () => {
     setIsYearly(!isYearly);

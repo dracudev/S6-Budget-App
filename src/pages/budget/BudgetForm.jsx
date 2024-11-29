@@ -3,9 +3,9 @@ import { WebElements } from "./WebElements";
 import { CustomCard } from "../../components/CustomCard";
 import { useBudget } from "../../contexts/useBudget";
 
-export function BudgetForm({ isYearly }) {
-  const { checkedItems, budget, handleChecked, elements, setElements, handleClickAdd, handleClickRest } = useBudget();
-  const getPrice = (price) => (isYearly ? price * 0.8 : price);
+export function BudgetForm() {
+  const { checkedItems, budget, handleChecked, elements, setElements, handleClickAdd, handleClickRest, isYearly, getPrice } = useBudget();
+
   return (
     <div className="form-container">
       <CustomCard className={`container ${checkedItems.seo ? 'border-checked' : ''}`}>

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useBudgetCalculation = (checkedItems, elements) => {
+export const useBudgetCalculation = (checkedItems, elements, isYearly) => {
   const [budget, setBudget] = useState(0);
 
   useEffect(() => {
@@ -13,9 +13,12 @@ export const useBudgetCalculation = (checkedItems, elements) => {
     newBudget += elements.pages * 30;
     newBudget += elements.languages * 30;
 
+    if (isYearly) {
+      newBudget *= 0.8;
+    }
     setBudget(newBudget);
     
-  }, [checkedItems, elements]);
+  }, [checkedItems, elements, isYearly]);
 
   return budget;
 };
