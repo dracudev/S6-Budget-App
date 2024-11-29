@@ -9,6 +9,7 @@ export function useYearly() {
 
   return {
     isYearly,
+    setIsYearly,
     handleSwitchClick,
   };
 }

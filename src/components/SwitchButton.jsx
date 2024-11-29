@@ -24,13 +24,13 @@ const StyledFormCheck = styled(Form.Check)`
   }
 `;
 
-function SwitchButton({ textR, textL, onClick }) {
+function SwitchButton({ textR, textL, onChange, checked }) {
   return (
     <Form>
       <div className="d-flex  align-items-center">
-        <p className="me-3 m-0 ">{textL}</p>
-        <StyledFormCheck type="switch" id="switch-button" onClick={onClick}/>
-        <p className="ms-2 m-0">{textR}</p>
+        <p className="me-3 m-0 lead">{textL}</p>
+        <StyledFormCheck type="switch" id="switch-button" onChange={onChange} checked={checked}/>
+        <p className="ms-2 m-0 lead">{textR}</p>
       </div>
     </Form>
   );
@@ -39,7 +39,8 @@ function SwitchButton({ textR, textL, onClick }) {
 SwitchButton.propTypes = {
   textR: PropTypes.string,
   textL: PropTypes.string,
-  onClick: PropTypes.func
+  onChange: PropTypes.func,
+  checked: PropTypes.bool.isRequired
 };
 
 export default SwitchButton;

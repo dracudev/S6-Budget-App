@@ -34,7 +34,8 @@ export function Budget() {
           <SwitchButton
             textL={"Monthly"}
             textR={"Yearly"}
-            onClick={handleSwitchClick}
+            onChange={handleSwitchClick}
+            checked={isYearly}
           ></SwitchButton>
         </div>
       </div>

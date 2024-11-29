@@ -85,9 +85,9 @@ export function CurrentBudgets() {
             </CustomCard>
           ))
         ) : (
-          <h4 className="d-flex align-items-center justify-content-center">
+          <p className="lead d-flex align-items-center justify-content-center">
             No current budgets
-          </h4>
+          </p>
         )}
       </div>
     </div>
