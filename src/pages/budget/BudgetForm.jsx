@@ -26,10 +26,12 @@ export function BudgetForm() {
             <h2>Seo</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          {isYearly && <p className="text-success">20% saved</p>}
+          <div className="d-flex flex-column">
+          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
           <h5 className="mx-3">
             <strong className="fs-1">{getPrice(300)}</strong>€
           </h5>
+          </div>
 
           <label>
             <div className="d-flex align-items-center add-button">
@@ -53,11 +55,12 @@ export function BudgetForm() {
             <h2>Ads</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          {isYearly && <p className="text-success">20% saved</p>}
+          <div className="d-flex flex-column">
+          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
           <h5 className="mx-3">
             <strong className="fs-1">{getPrice(400)}</strong>€
           </h5>
-
+          </div>
           <label>
             <div className="d-flex align-items-center add-button">
               <input
@@ -80,10 +83,12 @@ export function BudgetForm() {
             <h2>Web</h2>
             <p>Programming a complete responsive website</p>
           </div>
-          {isYearly && <p className="text-success">20% saved</p>}
-          <h5 className=" mx-3">
+          <div className="d-flex flex-column">
+          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
+          <h5 className="mx-3">
             <strong className="fs-1">{getPrice(500)}</strong>€
           </h5>
+          </div>
 
           <label>
             <div className="d-flex align-items-center add-button">

@@ -24,6 +24,12 @@
   margin-top: 1rem;
 }
 
+.offer {
+  color: #3c8ba3;
+  font-size: large;
+  font-weight: bold;
+}
+
 @media (max-width: 500px)  {
   .card-units {
     flex-direction: column;
@@ -37,6 +43,9 @@
     }
   }
   .add-button {
+    margin-top: 1rem;
+  }
+  .offer {
     margin-top: 1rem;
   }
 }
