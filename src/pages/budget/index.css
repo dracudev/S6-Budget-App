@@ -1,0 +1,8 @@
+@media (max-width: 500px)  {
+    div#root > .btn-container{
+        flex-direction: column;
+        align-items: center;
+        gap: 0 !important;
+        margin-bottom: 2rem;
+    }
+  }

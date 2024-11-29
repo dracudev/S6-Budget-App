@@ -7,6 +7,7 @@ import { FaHome } from "react-icons/fa";
 import "./index.css";
 import { useBudget } from "../../contexts/useBudget";
 import { CurrentBudgets } from "./CurrentBudgets";
+import SwitchButton from "../../components/SwitchButton";
 
 export function Budget() {
   const { checkedItems } = useBudget();
@@ -16,11 +17,22 @@ export function Budget() {
         <h1 className="text-center text-white">Get the best quality</h1>
       </HeaderBanner>
 
-      <Link to="/" style={{ textDecoration: "none" }}>
-        <StandardButton className="my-4 d-flex align-items-center">
-          <FaHome className="me-2" /> Home
-        </StandardButton>
-      </Link>
+      <div className="w-75 d-flex gap-5 justify-content-around btn-container">
+        <div>
+        <Link
+          to="/"
+          style={{ textDecoration: "none" }}
+          className="align-items-start"
+        >
+          <StandardButton className="my-4 d-flex align-items-center">
+            <FaHome className="me-2" /> Home
+          </StandardButton>
+        </Link>
+        </div>
+        <div className="d-flex align-items-center">
+        <SwitchButton textL={"Monthly"} textR={"Yearly"}></SwitchButton>
+        </div>
+      </div>
 
       <BudgetForm></BudgetForm>
 

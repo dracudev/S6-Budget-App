@@ -90,7 +90,7 @@ export function BudgetForm() {
       </CustomCard>
         <div className="budget mb-3">
         <div className="my-5">
-          <h3 className="me-4">
+          <h3 className="me-5">
             Budget:&nbsp; <strong className="fs-1">{budget}</strong>€
           </h3>
         </div>

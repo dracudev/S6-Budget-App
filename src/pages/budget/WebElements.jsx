@@ -16,13 +16,13 @@ export function WebElements({
     <div className="number-container">
       <div className="number-input">
         <p className="pages d-flex align-items-center justify-content-center">
-          <button className="me-2" onClick={() => handleModal("pages")}>
+          <button className="me-2 d-flex align-items-center justify-content-center" onClick={() => handleModal("pages")}>
             <CiCircleInfo />
           </button>
           Pages
         </p>
         <div className="d-flex">
-          <button onClick={() => handleClickRest("pages")}>
+          <button className="d-flex align-items-center justify-content-center" onClick={() => handleClickRest("pages")}>
             <CiCircleMinus />
           </button>
           <input
@@ -32,20 +32,20 @@ export function WebElements({
               setElements({ ...elements, pages: Number(e.target.value) })
             }
           />
-          <button type="button" onClick={() => handleClickAdd("pages")}>
+          <button className="d-flex align-items-center justify-content-center" type="button" onClick={() => handleClickAdd("pages")}>
             <CiCirclePlus />
           </button>
         </div>
       </div>
       <div className="number-input">
         <p className="d-flex align-items-center justify-content-center">
-          <button className="me-2" onClick={() => handleModal("languages")}>
+          <button className="me-2 d-flex align-items-center justify-content-center" onClick={() => handleModal("languages")}>
             <CiCircleInfo />
           </button>
           Languages
         </p>
         <div className="d-flex">
-          <button type="button" onClick={() => handleClickRest("languages")}>
+          <button className="d-flex align-items-center justify-content-center" type="button" onClick={() => handleClickRest("languages")}>
             <CiCircleMinus />
           </button>
           <input
@@ -55,7 +55,7 @@ export function WebElements({
               setElements({ ...elements, languages: Number(e.target.value) })
             }
           />
-          <button type="button" onClick={() => handleClickAdd("languages")}>
+          <button className="d-flex align-items-center justify-content-center" type="button" onClick={() => handleClickAdd("languages")}>
             <CiCirclePlus />
           </button>
         </div>
