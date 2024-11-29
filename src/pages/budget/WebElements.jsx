@@ -1,4 +1,4 @@
-import "./WebElements.css";
+import "./styles/WebElements.css";
 import PropTypes from "prop-types";
 import { useModal } from "../../hooks/useModal";
 import { CiCircleInfo, CiCircleMinus, CiCirclePlus } from "react-icons/ci";

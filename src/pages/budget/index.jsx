@@ -4,7 +4,7 @@ import { BudgetForm } from "./BudgetForm";
 import { Link } from "react-router-dom";
 import { ClientDataForm } from "./ClientDataForm";
 import { FaHome } from "react-icons/fa";
-import "./index.css";
+import "./styles/index.css";
 import { useBudget } from "../../contexts/useBudget";
 import { CurrentBudgets } from "./CurrentBudgets";
 import SwitchButton from "../../components/SwitchButton";

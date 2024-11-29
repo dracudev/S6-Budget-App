@@ -2,7 +2,7 @@ import { StandardButton } from "../../components/StandardButton";
 import { useBudget } from "../../contexts/useBudget";
 import { GoTriangleDown, GoTriangleUp } from "react-icons/go";
 import { IoIosSearch } from "react-icons/io";
-import "./BudgetFilter.css";
+import "./styles/BudgetFilter.css";
 import { useState } from "react";
 
 export function BudgetFilter() {

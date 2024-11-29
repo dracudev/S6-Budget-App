@@ -1,6 +1,6 @@
 import { CustomCard } from "../../components/CustomCard";
 import { StandardButton } from "../../components/StandardButton";
-import "./ClientDataForm.css";
+import "./styles/ClientDataForm.css";
 import { FaArrowRight } from "react-icons/fa";
 import { useBudget } from "../../contexts/useBudget";
 

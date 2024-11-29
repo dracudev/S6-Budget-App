@@ -1,4 +1,4 @@
-import "./BudgetForm.css";
+import "./styles/BudgetForm.css";
 import { WebElements } from "./WebElements";
 import { CustomCard } from "../../components/CustomCard";
 import { useBudget } from "../../contexts/useBudget";

@@ -1,4 +1,4 @@
-import "./CurrentBudgets.css";
+import "./styles/CurrentBudgets.css";
 import { CustomCard } from "../../components/CustomCard";
 import { BudgetFilter } from "./BudgetFilter";
 import { useBudget } from "../../contexts/useBudget";
