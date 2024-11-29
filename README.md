@@ -1,4 +1,4 @@
-# S6 React Web Budget Calculator
+# S6 React Budget Calculator App
 
 ## 📄 Description
 
