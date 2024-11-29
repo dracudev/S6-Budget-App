@@ -3,9 +3,9 @@ import { WebElements } from "./WebElements";
 import { CustomCard } from "../../components/CustomCard";
 import { useBudget } from "../../contexts/useBudget";
 
-export function BudgetForm() {
+export function BudgetForm({ isYearly }) {
   const { checkedItems, budget, handleChecked, elements, setElements, handleClickAdd, handleClickRest } = useBudget();
-
+  const getPrice = (price) => (isYearly ? price * 0.8 : price);
   return (
     <div className="form-container">
       <CustomCard className={`container ${checkedItems.seo ? 'border-checked' : ''}`}>
@@ -14,8 +14,9 @@ export function BudgetForm() {
             <h2>Seo</h2>
             <p>Programming a complete responsive website</p>
           </div>
+          {isYearly && <p className="text-success">20% saved</p>}
           <h5 className="mx-3">
-            <strong className="fs-1">300</strong>€
+            <strong className="fs-1">{getPrice(300)}</strong>€
           </h5>
 
           <label>
@@ -38,8 +39,9 @@ export function BudgetForm() {
             <h2>Ads</h2>
             <p>Programming a complete responsive website</p>
           </div>
+          {isYearly && <p className="text-success">20% saved</p>}
           <h5 className="mx-3">
-            <strong className="fs-1">400</strong>€
+            <strong className="fs-1">{getPrice(400)}</strong>€
           </h5>
 
           <label>
@@ -62,8 +64,9 @@ export function BudgetForm() {
             <h2>Web</h2>
             <p>Programming a complete responsive website</p>
           </div>
+          {isYearly && <p className="text-success">20% saved</p>}
           <h5 className=" mx-3">
-            <strong className="fs-1">500</strong>€
+            <strong className="fs-1">{getPrice(500)}</strong>€
           </h5>
 
           <label>

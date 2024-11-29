@@ -8,9 +8,16 @@ import "./index.css";
 import { useBudget } from "../../contexts/useBudget";
 import { CurrentBudgets } from "./CurrentBudgets";
 import SwitchButton from "../../components/SwitchButton";
+import { useState } from "react";
 
 export function Budget() {
   const { checkedItems } = useBudget();
+  const [isYearly, setIsYearly] = useState(false);
+
+  const handleSwitchClick = () => {
+    setIsYearly(!isYearly);
+  };
+
   return (
     <>
       <HeaderBanner>
@@ -30,11 +37,11 @@ export function Budget() {
         </Link>
         </div>
         <div className="d-flex align-items-center">
-        <SwitchButton textL={"Monthly"} textR={"Yearly"}></SwitchButton>
+        <SwitchButton textL={"Monthly"} textR={"Yearly"} onClick={handleSwitchClick}></SwitchButton>
         </div>
       </div>
 
-      <BudgetForm></BudgetForm>
+      <BudgetForm isYearly={isYearly}></BudgetForm>
 
       {(checkedItems.web || checkedItems.seo || checkedItems.ads) && (
         <ClientDataForm />
