@@ -24,13 +24,17 @@ export function BudgetForm() {
         <div className="card-units">
           <div>
             <h2>Seo</h2>
-            <p>Programming a complete responsive website</p>
+            <p>Boost your rankings and online visibility</p>
           </div>
           <div className="d-flex flex-column">
-          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
-          <h5 className="mx-3">
-            <strong className="fs-1">{getPrice(300)}</strong>€
-          </h5>
+            {isYearly && (
+              <p className="offer d-flex align-items-center justify-content-center">
+                20% saved
+              </p>
+            )}
+            <h5 className="mx-3">
+              <strong className="fs-1">{getPrice(300)}</strong>€
+            </h5>
           </div>
 
           <label>
@@ -53,13 +57,17 @@ export function BudgetForm() {
         <div className="card-units">
           <div>
             <h2>Ads</h2>
-            <p>Programming a complete responsive website</p>
+            <p>Targeted ad campaigns to grow your business</p>
           </div>
           <div className="d-flex flex-column">
-          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
-          <h5 className="mx-3">
-            <strong className="fs-1">{getPrice(400)}</strong>€
-          </h5>
+            {isYearly && (
+              <p className="offer d-flex align-items-center justify-content-center">
+                20% saved
+              </p>
+            )}
+            <h5 className="mx-3">
+              <strong className="fs-1">{getPrice(400)}</strong>€
+            </h5>
           </div>
           <label>
             <div className="d-flex align-items-center add-button">
@@ -81,13 +89,17 @@ export function BudgetForm() {
         <div className="card-units">
           <div>
             <h2>Web</h2>
-            <p>Programming a complete responsive website</p>
+            <p>Professional Responsive Website Design</p>
           </div>
           <div className="d-flex flex-column">
-          {isYearly && <p className="offer d-flex align-items-center justify-content-center">20% saved</p>}
-          <h5 className="mx-3">
-            <strong className="fs-1">{getPrice(500)}</strong>€
-          </h5>
+            {isYearly && (
+              <p className="offer d-flex align-items-center justify-content-center">
+                20% saved
+              </p>
+            )}
+            <h5 className="mx-3">
+              <strong className="fs-1">{getPrice(500)}</strong>€
+            </h5>
           </div>
 
           <label>
