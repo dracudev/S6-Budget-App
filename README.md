@@ -1,4 +1,4 @@
-# 💻 React Web Budget Calculator
+# S6 React Budget Calculator App
 
 ## 📄 Description
 
@@ -29,8 +29,6 @@ Start with a form containing three checkboxes for services:
 - Store checkbox states using either individual `useState` hooks or a centralized state (array/object).
 - Store the total budget in a state.
 
----
-
 #### **Exercise 2**
 Add customization for web development:
 - Allow users to select the number of pages and languages for the website.
@@ -38,21 +36,15 @@ Add customization for web development:
 - Calculate the cost of the website as:
 ({Number of Pages} + {Number of Languages}) * 30€
 
----
-
 #### **Exercise 3**
 Enhance input usability:
 - Add buttons to increment or decrement the number of pages and languages by one.
-
----
 
 #### **Exercise 4**
 Create a welcome screen:
 - Explain the app's purpose and functionality.
 - Include a button to navigate to the main calculator page.
 - Add a button on the calculator page to navigate back to the welcome screen using **React Router**.
-
----
 
 #### **Exercise 5**
 Enable users to manage multiple budgets:
@@ -69,8 +61,6 @@ Add tooltips or modals for clarification:
 - Include a button with an info icon next to inputs for the number of pages and languages.
 - Show a modal using Bootstrap or Tailwind with guidance on using these inputs.
 
----
-
 #### **Exercise 7**
 Enhance budget list usability:
 - Add three buttons to the budget list:
@@ -78,13 +68,9 @@ Enhance budget list usability:
   2. Sort budgets by date.
   3. Reset the sorting order.
 
----
-
 #### **Exercise 8**
 Implement a search functionality:
 - Allow users to search budgets by name, filtering the displayed results.
-
----
 
 #### **Exercise 9**
 Introduce a discount feature:
