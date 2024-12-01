@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-@media (max-width: 500px)  {
+@media (max-width: 500px) {
   .card-units {
     flex-direction: column;
     justify-content: center;
