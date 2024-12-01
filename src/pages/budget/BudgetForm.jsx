@@ -57,7 +57,7 @@ export function BudgetForm() {
         <div className="card-units">
           <div>
             <h2>Ads</h2>
-            <p>Targeted ad campaigns to grow your business</p>
+            <p>Ad campaigns to grow your business</p>
           </div>
           <div className="d-flex flex-column">
             {isYearly && (
