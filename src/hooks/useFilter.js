@@ -45,9 +45,8 @@ export function useFilter(submittedData, isYearly) {
     } else {
       newOrder = "asc";
     }
-    if (newOrder === "none") {
-      sortedData = data;
-    } else if (type === "date") {
+
+    if (type === "date") {
       sortedData = filterData(data, newOrder);
     } else if (type === "user") {
       sortedData = filterName(data, newOrder);
