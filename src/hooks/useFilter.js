@@ -43,9 +43,8 @@ export function useFilter(submittedData, isYearly) {
     } else if (sortState[type] === "asc") {
       newOrder = "desc";
     } else {
-      newOrder = "none";
+      newOrder = "asc";
     }
-
     if (newOrder === "none") {
       sortedData = data;
     } else if (type === "date") {
@@ -100,6 +99,6 @@ export function useFilter(submittedData, isYearly) {
     setFilteredData,
     handleFilter,
     handleSearchChange,
-    getPrice
+    getPrice,
   };
 }
