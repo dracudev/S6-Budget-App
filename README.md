@@ -1,4 +1,4 @@
-# S6 React Budget Calculator App
+# Budget Calculator App
 
 ## 📄 Description
 
@@ -12,80 +12,6 @@ This project involves building a React application designed to simplify web budg
 - Build an interactive interface using checkboxes, input fields, and buttons to dynamically calculate a web budget.
 - Enhance React fundamentals such as state management, routing, and component structure.
 - Learn to structure React projects for scalability, maintainability, and testability.
-
-<br>
-
-## 📐 Project Structure
-
-### ⭐ **Level 1**
-
-#### **Exercise 1**
-Start with a form containing three checkboxes for services:
-1. **SEO Campaign** (€300)
-2. **Advertising Campaign** (€400)
-3. **Web Development** (€500)
-
-- Dynamically update the total budget based on selected services.
-- Store checkbox states using either individual `useState` hooks or a centralized state (array/object).
-- Store the total budget in a state.
-
-#### **Exercise 2**
-Add customization for web development:
-- Allow users to select the number of pages and languages for the website.
-- Create a component visible only when "Web Development" is selected.
-- Calculate the cost of the website as:
-({Number of Pages} + {Number of Languages}) * 30€
-
-#### **Exercise 3**
-Enhance input usability:
-- Add buttons to increment or decrement the number of pages and languages by one.
-
-#### **Exercise 4**
-Create a welcome screen:
-- Explain the app's purpose and functionality.
-- Include a button to navigate to the main calculator page.
-- Add a button on the calculator page to navigate back to the welcome screen using **React Router**.
-
-#### **Exercise 5**
-Enable users to manage multiple budgets:
-- Add inputs for **budget name** and **client name**.
-- Allow users to save budgets with selected services and calculated total price.
-- Display saved budgets in a list.
-
----
-
-### ⭐⭐ **Level 2**
-
-#### **Exercise 6**
-Add tooltips or modals for clarification:
-- Include a button with an info icon next to inputs for the number of pages and languages.
-- Show a modal using Bootstrap or Tailwind with guidance on using these inputs.
-
-#### **Exercise 7**
-Enhance budget list usability:
-- Add three buttons to the budget list:
-  1. Sort budgets alphabetically.
-  2. Sort budgets by date.
-  3. Reset the sorting order.
-
-#### **Exercise 8**
-Implement a search functionality:
-- Allow users to search budgets by name, filtering the displayed results.
-
-#### **Exercise 9**
-Introduce a discount feature:
-- Add a toggle button for a 20% annual discount.
-- Update the interface to indicate when the discount is applied.
-
----
-
-### ⭐⭐⭐ **Level 3**
-
-#### **Exercise 10**
-Enable budget sharing:
-- Dynamically update the URL based on budget selections, such as:
-http://localhost:4200/home?WebPage=true&CampaignSEO=true&pages=2&lang=3
-- Ensure shared URLs display the same budget configuration.
 
 <br>
 
